@@ -6,6 +6,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 bot = telebot.TeleBot(BOT_TOKEN)
+bot.remove_webhook()
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -44,10 +45,4 @@ def explain_word(message):
     else:
         bot.send_message(message.chat.id, "⚠️ Failed to get response from AI.")
 
-bot.polling()
-
-# Удаляем старый webhook 
-bot.remove_webhook()
-
-# Запускаем бота в режиме long polling
 bot.polling()
