@@ -50,5 +50,5 @@ def explain_word(message):
         bot.send_message(message.chat.id, reply)
     else:
         bot.send_message(message.chat.id, "⚠️ Failed to get response from AI.")
-        app.run(host='0.0.0.0', port=int(o
+        app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
     
