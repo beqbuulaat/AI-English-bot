@@ -36,7 +36,7 @@ def explain_word(message):
     json_data = {"model": "mistral:mythomax-l2",
         "messages": [{"role": "user", "content": prompt}]}
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=json_data)
-    response.status_code == 200:
+    if response.status_code == 200:
     reply = response.json()["choices"][0]["message"]["content"]
     bot.send_message(message.chat.id, reply)
 else:
