@@ -56,6 +56,6 @@ def explain_word(message):
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
     if __name__ == '__main__':
-    bot.remove_webhook()
-    bot.set_webhook(url=f"{WEBHOOK_URL}/webhook")
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+        bot.remove_webhook()
+        bot.set_webhook(url=f"{WEBHOOK_URL}/webhook")
+        app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
