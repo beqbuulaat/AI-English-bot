@@ -41,14 +41,13 @@ def explain_word(message):
 
     json_data = {
         "model": "mistral:mythomax-l2",
-        "messages": [{"role": "user", "content": prompt}]
-    }
+        "messages": [{"role": "user", "content": prompt}]}
 
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=json_data)
-    if response.status_code == 200:
-        reply = response.json()["choices"][0]["message"]["content"]
-        bot.send_message(message.chat.id, reply)
-    else:
-        bot.send_message(message.chat.id, "⚠️ Failed to get response from AI.")
-        app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    
+        if __name__ == '__main__':
+            bot.remove_webhook()
+            bot.set_webhook(url=f"{WEBHOOK_URL}/webhook")
+            print("✅ Webhook установлен!")
+            app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
     
