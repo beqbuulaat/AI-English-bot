@@ -16,10 +16,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = Flask(__name__)
+
 
 # Initialize bot
-bot = TelegramBot()
+bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -50,7 +50,7 @@ def setup_webhook():
     
     try:
         # First, let's check current webhook info
-        check_url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/getWebhookInfo"
+        check_url = f"https://api.telegram.org/bot{os.getenv('BOT_TOKEN')}/getWebhookInfo"
         import requests
         check_response = requests.get(check_url)
         current_webhook = check_response.json()
