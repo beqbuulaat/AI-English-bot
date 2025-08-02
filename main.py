@@ -19,9 +19,7 @@ def webhook():
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.send_message(
-        message.chat.id,
-        "👋 Welcome to AI English Bot!\nSend /word <english word> to get explanation, translation and example!"
+    bot.send_message(message.chat.id,"👋 Welcome to AI English Bot!\nSend /word <english word> to get explanation, translation and example!")
 
 @bot.message_handler(commands=['word'])
 def explain_word(message):
