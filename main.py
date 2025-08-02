@@ -6,7 +6,7 @@ Handles webhook setup and Flask server initialization.
 
 import os
 import logging
-from bot import TelegramBot
+
 
 # Configure logging
 logging.basicConfig(
