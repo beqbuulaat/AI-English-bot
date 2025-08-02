@@ -22,8 +22,7 @@ logger = logging.getLogger(__name__)
 # Initialize bot
 bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
+
     """Handle incoming webhook from Telegram."""
     try:
         update = request.get_json()
@@ -34,13 +33,10 @@ def webhook():
         logger.error(f"Error handling webhook: {e}")
         return 'Error', 500
 
-@app.route('/health', methods=['GET'])
-def health():
     """Health check endpoint."""
     return 'Bot is running!', 200
 
-@app.route('/setup_webhook', methods=['GET'])
-def setup_webhook():
+
     """Setup webhook for the bot."""
     # Get the current URL from the request and ensure it's HTTPS for Replit
     base_url = request.url_root.rstrip('/')
@@ -90,8 +86,7 @@ def setup_webhook():
         <p><a href="/">← Вернуться на главную</a></p>
         '''
 
-@app.route('/', methods=['GET'])
-def index():
+
     """Basic index page."""
     webhook_setup_url = request.url_root.rstrip('/') + '/setup_webhook'
     return f'''
@@ -153,4 +148,3 @@ if __name__ == '__main__':
     
     # Start Flask server
     logger.info(f"Starting bot server on {host}:{port}")
-    app.run(host=host, port=port, debug=False)
