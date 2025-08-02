@@ -45,3 +45,9 @@ def explain_word(message):
         bot.send_message(message.chat.id, "⚠️ Failed to get response from AI.")
 
 bot.polling()
+
+# Удаляем старый webhook 
+bot.remove_webhook()
+
+# Запускаем бота в режиме long polling
+bot.polling()
