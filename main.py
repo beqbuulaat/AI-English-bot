@@ -52,12 +52,6 @@ def explain_word(message):
     else:
         bot.send_message(message.chat.id, "⚠️ Failed to get response from AI.")
 
-# Устанавливаем webhook один раз при старте
-@app.before_first_request
-def set_webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url=f"{WEBHOOK_URL}/webhook")
-
 # Запуск Flask
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
