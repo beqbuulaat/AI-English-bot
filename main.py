@@ -50,4 +50,3 @@ def explain_word(message):
             bot.set_webhook(url=f"{WEBHOOK_URL}/webhook")
             print("✅ Webhook установлен!")
             app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-    
