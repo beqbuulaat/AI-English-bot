@@ -6,7 +6,8 @@ Handles webhook setup and Flask server initialization.
 
 import os
 import logging
-
+import telebot
+import requests
 
 # Configure logging
 logging.basicConfig(
