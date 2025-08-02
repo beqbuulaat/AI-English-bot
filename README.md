@@ -1,21 +1,25 @@
-# 📚 English AI Bot 🇬🇧🤖
+# 🇬🇧 AI English Bot
 
-## 📝 Описание
-Это Telegram-бот, созданный для помощи в изучении английского языка. Он объясняет значения слов, грамматические правила и будет дополнен мини-тестами. Использует OpenRouter API (MythoMax) для генерации объяснений.
+## 📌 Description
+**AI English Bot** is a Telegram assistant designed to help users improve their English vocabulary and understanding. It explains English words, provides Russian translations, gives example sentences, and will soon offer grammar rules and mini-tests.
 
-## 🔧 Функционал
-- `/start` — приветствие и краткая инструкция
-- `/word <слово>` — объяснение английского слова (перевод, пример)
-- `/grammar <тема>` — объяснение грамматического правила *(в разработке)*
-- `/test` — мини-тест на выбор *(в разработке)*
+Built using the OpenRouter API (MythoMax model), the bot acts as a lightweight personal language tutor.
 
-## 🛠 Используемые технологии
-- Python
-- pyTelegramBotAPI
-- OpenRouter API (MythoMax)
-- Replit
+## ⚙️ Features
+- `/start` — Welcome message and instructions  
+- `/word <word>` — AI-generated explanation, Russian translation, and example usage  
+- `/grammar <topic>` — (coming soon)  
+- `/test` — (coming soon)
 
-## 📦 Установка
+## 🧠 Technologies
+- Python 3  
+- [pyTelegramBotAPI](https://pypi.org/project/pyTelegramBotAPI/)  
+- [OpenRouter API](https://openrouter.ai/)  
+- Replit / GitHub
+
+## 🔧 Setup & Run
+
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
